@@ -9,7 +9,7 @@ spec:
   storageNamespace: traefik-system
   install:
     createNamespace: true
-  interval: 1h0m0s
+  interval: 1m
   chart:
     spec:
       chart: traefik
