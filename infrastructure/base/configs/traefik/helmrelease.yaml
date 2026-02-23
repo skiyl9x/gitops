@@ -19,17 +19,16 @@ spec:
         name: traefik
         namespace: flux-system
   values:
-    # Optional: Enable the Traefik Dashboard
-    ingressRoute:
-      dashboard:
-        enabled: true
-        matchRule: Host(`traefik-dashboard.${cluster_domain}`)
-        entryPoints:
-          - web
-    # Enable the modern Gateway API provider
-    providers:
-      kubernetesGateway:
-        enabled: true
+    certificatesResolvers:
+      cloudflare:
+        acme:
+          email: skiyl9x@gmail.com
+          storage: /data/acme.json
+          dnsChallenge:
+            provider: cloudflare
+    env:
+      - name: CF_DNS_API_TOKEN_FILE
+        value: "/etc/secrets/api-token"
     gateway:
       listeners:
         web:
@@ -37,6 +36,22 @@ spec:
             from: All
       annotations:
         traefik.io/gateway.tls.certresolver: cloudflare
+    # Optional: Enable the Traefik Dashboard
+    ingressRoute:
+      dashboard:
+        enabled: true
+        matchRule: Host(`traefik-dashboard.${cluster_domain}`)
+        entryPoints:
+          - web
+    logs:
+      access:
+        enabled: true
+        # Optional: customize format (common or json)
+        format: json
+        # Optional: track specific headers
+        fields:
+          headers:
+            defaultMode: keep
     ports:
       web:
         port: 8000 # Matches --entryPoints.web.address
@@ -49,27 +64,11 @@ spec:
       traefik:
         expose:
           default: true
-    logs:
-      access:
+    # Enable the modern Gateway API provider
+    providers:
+      kubernetesGateway:
         enabled: true
-        # Optional: customize format (common or json)
-        format: json
-        # Optional: track specific headers
-        fields:
-          headers:
-            defaultMode: keep
     volumes:
       - name: cloudflare-api-token
         mountPath: /etc/secrets
         type: secret
-    env:
-      - name: CF_DNS_API_TOKEN_FILE
-        value: "/etc/secrets/api-token"
-
-    certificatesResolvers:
-      cloudflare:
-        acme:
-          email: skiyl9x@gmail.com
-          storage: /data/acme.json
-          dnsChallenge:
-            provider: cloudflare
