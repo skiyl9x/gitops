@@ -32,6 +32,8 @@ spec:
     - name: cloudflare-token-vol
       secret:
         secretName: cloudflare-api-token
+    deployment:
+      additionalContainers: []
     gateway:
       listeners:
         web:
