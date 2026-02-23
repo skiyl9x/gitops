@@ -40,8 +40,11 @@ spec:
           namespacePolicy:
             from: All
         websecure:
+          mode: TLSModeType
           namespacePolicy:
             from: All
+          port: 8443
+          protocol: HTTPS
     ingressRoute:
       dashboard:
         enabled: true
