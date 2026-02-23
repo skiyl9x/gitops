@@ -46,7 +46,6 @@ spec:
         expose:
           default: true
 
-# ... your existing config (ports, etc.)
     logs:
       access:
         enabled: true
@@ -57,8 +56,12 @@ spec:
           headers:
             defaultMode: keep
 
-    # #Expose the dashboard on a specific port if needed
-    # ports:
-    #   traefik:
-    #     expose:
-    #      default: true
+
+    additionalVolumes:
+      - name: cloudflare-token-vol
+        secret:
+          secretName: cloudflare-api-token
+    additionalVolumeMounts:
+      - name: cloudflare-token-vol
+        mountPath: /etc/secrets
+        readOnly: true

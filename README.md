@@ -43,8 +43,15 @@ Add next to the /etc/hosts
 ```
 
 
-Create secret
+Create secret to get access to the Docker Registry
 
 ```
 kubectl create secret docker-registry github-oci-auth --namespace=flux-system --docker-server=ghcr.io --docker-username=skiyl9x --docker-password=<github-token>
+```
+
+
+Create secret for CloudFlare API (required for automatic SSL generation)
+```
+kubectl create secret generic cloudflare-api-token \
+  --from-literal=api-token=YOUR_TOKEN_HERE -n traefik-system
 ```
