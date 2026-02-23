@@ -54,13 +54,7 @@ spec:
         fields:
           headers:
             defaultMode: keep
-    deployment:
-      additionalContainers: []
-    additionalVolumes:
-      - name: cloudflare-token-vol
-        secret:
-          secretName: cloudflare-api-token
-    additionalVolumeMounts:
-      - name: cloudflare-token-vol
+    volumes:
+      - name: cloudflare-api-token
         mountPath: /etc/secrets
-        readOnly: true
+        type: secret
