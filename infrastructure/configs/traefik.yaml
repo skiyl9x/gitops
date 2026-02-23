@@ -64,10 +64,10 @@ spec:
         port: 8000
       websecure:
         exposedPort: 443
+        http:
+          tls:
+            certResolver: cloudflare
         port: 8443
-        tls:
-          certResolver: cloudflare
-          enabled: true
     providers:
       kubernetesGateway:
         enabled: true
