@@ -40,7 +40,7 @@ spec:
           namespacePolicy:
             from: All
         websecure:
-          mode: TLSModeType
+          mode: Terminate
           namespacePolicy:
             from: All
           port: 8443
