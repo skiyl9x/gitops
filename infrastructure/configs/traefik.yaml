@@ -35,6 +35,8 @@ spec:
     - name: CF_DNS_API_TOKEN_FILE
       value: /etc/secrets/api-token
     gateway:
+      annotations:
+        traefik.io/gateway.tls.certresolver: cloudflare
       listeners:
         web:
           namespacePolicy:
