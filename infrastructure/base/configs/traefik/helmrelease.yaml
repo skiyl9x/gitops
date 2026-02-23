@@ -37,7 +37,7 @@ spec:
         websecure:
           port: 8443
           protocol: HTTPS
-          mode: TLSModeType
+          mode: Terminate
           namespacePolicy:
             from: All
       # annotations:
