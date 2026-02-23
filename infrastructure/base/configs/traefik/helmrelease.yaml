@@ -35,6 +35,9 @@ spec:
           namespacePolicy:
             from: All
         websecure:
+          port: 8443
+          protocol: HTTPS
+          mode: TLSModeType
           namespacePolicy:
             from: All
       # annotations:
@@ -76,3 +79,4 @@ spec:
       - name: cloudflare-api-token
         mountPath: /etc/secrets
         type: secret
+
