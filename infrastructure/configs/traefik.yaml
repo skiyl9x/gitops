@@ -24,6 +24,9 @@ spec:
   storageNamespace: traefik-system
   targetNamespace: traefik-system
   values:
+    env:
+    - name: CF_DNS_API_TOKEN_FILE
+      value: /etc/secrets/api-token
     gateway:
       listeners:
         web:
