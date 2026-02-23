@@ -38,6 +38,9 @@ spec:
           port: 8443
           protocol: HTTPS
           mode: Terminate
+          certificateRefs:
+            - name: app-certs # Traefik will manage individual certs here
+              kind: Secret
           namespacePolicy:
             from: All
       # annotations:
