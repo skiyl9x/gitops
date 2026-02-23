@@ -55,7 +55,8 @@ spec:
         fields:
           headers:
             defaultMode: keep
-
+    deployment:
+      additionalContainers: []
 
     additionalVolumes:
       - name: cloudflare-token-vol
