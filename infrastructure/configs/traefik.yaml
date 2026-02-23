@@ -24,16 +24,6 @@ spec:
   storageNamespace: traefik-system
   targetNamespace: traefik-system
   values:
-    additionalVolumeMounts:
-    - mountPath: /etc/secrets
-      name: cloudflare-token-vol
-      readOnly: true
-    additionalVolumes:
-    - name: cloudflare-token-vol
-      secret:
-        secretName: cloudflare-api-token
-    deployment:
-      additionalContainers: []
     gateway:
       listeners:
         web:
@@ -65,3 +55,7 @@ spec:
     providers:
       kubernetesGateway:
         enabled: true
+    volumes:
+    - mountPath: /etc/secrets
+      name: cloudflare-api-token
+      type: secret
