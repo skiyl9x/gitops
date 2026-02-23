@@ -64,6 +64,8 @@ spec:
       websecure:
         exposedPort: 443
         port: 8443
+        tls:
+          mode: Terminate
     providers:
       kubernetesGateway:
         enabled: true
