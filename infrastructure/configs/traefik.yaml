@@ -41,6 +41,9 @@ spec:
         web:
           namespacePolicy:
             from: All
+        websecure:
+          namespacePolicy:
+            from: All
     ingressRoute:
       dashboard:
         enabled: true
