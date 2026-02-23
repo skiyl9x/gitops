@@ -40,6 +40,9 @@ spec:
           namespacePolicy:
             from: All
         websecure:
+          certificateRefs:
+          - kind: Secret
+            name: app-certs
           mode: Terminate
           namespacePolicy:
             from: All
