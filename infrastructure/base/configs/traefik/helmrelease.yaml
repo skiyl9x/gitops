@@ -34,6 +34,9 @@ spec:
         web:
           namespacePolicy:
             from: All
+        websecure:
+          namespacePolicy:
+            from: All
       annotations:
         traefik.io/gateway.tls.certresolver: cloudflare
     # Optional: Enable the Traefik Dashboard
