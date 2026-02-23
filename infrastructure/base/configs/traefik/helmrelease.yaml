@@ -35,6 +35,8 @@ spec:
         web:
           namespacePolicy:
             from: All
+      annotations:
+        traefik.io/gateway.tls.certresolver: cloudflare
     ports:
       web:
         port: 8000 # Matches --entryPoints.web.address
