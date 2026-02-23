@@ -18,3 +18,5 @@
 - [ ] Implement limitation of resources for namespaces
 - [ ] Add OpenTelemetry collector to collect the logs and push to Loki
 - [ ] Create matrix job for frontend and backend and dynamic image name from docker-bake.hcl
+- [ ] Implement Canary Deployment strategy
+- [ ] Implement Blue/Green Deployment strategy
