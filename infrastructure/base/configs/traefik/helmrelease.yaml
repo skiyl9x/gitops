@@ -61,3 +61,11 @@ spec:
     env:
       - name: CF_DNS_API_TOKEN_FILE
         value: "/etc/secrets/api-token"
+
+    certificatesResolvers:
+      cloudflare:
+        acme:
+          email: skiyl9x@gmail.com
+          storage: /data/acme.json
+          dnsChallenge:
+            provider: cloudflare
