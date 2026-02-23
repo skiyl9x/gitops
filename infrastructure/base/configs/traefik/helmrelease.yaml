@@ -37,8 +37,8 @@ spec:
         websecure:
           namespacePolicy:
             from: All
-      annotations:
-        traefik.io/gateway.tls.certresolver: cloudflare
+      # annotations:
+      #   traefik.io/gateway.tls.certresolver: cloudflare
     # Optional: Enable the Traefik Dashboard
     ingressRoute:
       dashboard:
@@ -63,7 +63,8 @@ spec:
         port: 8443 # Matches --entryPoints.websecure.address
         exposedPort: 443 # What you'll use in your browser (https://<IP>)
         tls:
-          mode: Terminate
+          enabled: true
+          certResolver: cloudflare
       traefik:
         expose:
           default: true
