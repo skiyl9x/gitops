@@ -37,27 +37,25 @@ spec:
             from: All
     ports:
       web:
-        port: 8000        # Matches --entryPoints.web.address
-        exposedPort: 80   # What you'll use in your browser (http://<IP>)
+        port: 8000 # Matches --entryPoints.web.address
+        exposedPort: 80 # What you'll use in your browser (http://<IP>)
       websecure:
-        port: 8443        # Matches --entryPoints.websecure.address
-        exposedPort: 443  # What you'll use in your browser (https://<IP>)
+        port: 8443 # Matches --entryPoints.websecure.address
+        exposedPort: 443 # What you'll use in your browser (https://<IP>)
       traefik:
         expose:
           default: true
-
     logs:
       access:
         enabled: true
         # Optional: customize format (common or json)
-        format: json 
+        format: json
         # Optional: track specific headers
         fields:
           headers:
             defaultMode: keep
     deployment:
       additionalContainers: []
-
     additionalVolumes:
       - name: cloudflare-token-vol
         secret:
