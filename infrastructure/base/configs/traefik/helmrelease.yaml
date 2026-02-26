@@ -13,77 +13,63 @@ spec:
   chart:
     spec:
       chart: traefik
-      version: "39.0.0" # Adjust based on current latest version
+      version: "39.0.0"
       sourceRef:
         kind: HelmRepository
         name: traefik
         namespace: flux-system
   values:
-    #certificatesResolvers:
-    #  cloudflare:
-    #    acme:
-    #      email: skiyl9x@gmail.com
-    #      storage: /data/acme.json
-    #      dnsChallenge:
-    #        provider: cloudflare
-    #env:
-    #  - name: CF_DNS_API_TOKEN_FILE
-    #    value: "/etc/secrets/api-token"
     gateway:
       enabled: true
-      annotations:
-        traefik.io/gateway.tls.certresolver: cloudflare
       listeners:
+        # Configure the web listener to allow traffic from all namespaces
         web:
+          port: 8000
           namespacePolicy:
             from: All
+        # Configure the websecure listener to use TLS with the specified certificate and allow traffic from all namespaces
         websecure:
           port: 8443
           protocol: HTTPS
           mode: Terminate
           certificateRefs:
-            - name: app-certs # Traefik will manage individual certs here
+            - name: app-certs
               kind: Secret
           namespacePolicy:
             from: All
-      # annotations:
-      #   traefik.io/gateway.tls.certresolver: cloudflare
-    # Optional: Enable the Traefik Dashboard
     ingressRoute:
+      # Enable the dashboard IngressRoute with a match rule for the specified domain
       dashboard:
         enabled: true
         matchRule: Host(`traefik-dashboard.${cluster_domain}`)
         entryPoints:
           - web
     logs:
+      # Enable access logs in JSON format and keep all header fields
       access:
         enabled: true
-        # Optional: customize format (common or json)
         format: json
-        # Optional: track specific headers
         fields:
           headers:
             defaultMode: keep
     ports:
-      web:
-        port: 8000 # Matches --entryPoints.web.address
-        exposedPort: 80 # What you'll use in your browser (http://<IP>)
-      websecure:
-        port: 8443 # Matches --entryPoints.websecure.address
-        exposedPort: 443 # What you'll use in your browser (https://<IP>)
-        http:
-          tls:
-            enabled: true
-            # certResolver: cloudflare
+      # Expose the dashboard on port 8080
       traefik:
         expose:
           default: true
-    # Enable the modern Gateway API provider
+      # Expose the web entrypoint on port 80
+      web:
+        port: 8000
+        exposedPort: 80
+      # Expose the websecure entrypoint on port 443
+      websecure:
+        port: 8443
+        exposedPort: 443
+        http:
+          tls:
+            enabled: true
+    # Enable the Gateway API provider
     providers:
       kubernetesGateway:
         enabled: true
-    #volumes:
-    #  - name: cloudflare-api-token
-    #    mountPath: /etc/secrets
-    #    type: secret
 
