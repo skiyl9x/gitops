@@ -29,7 +29,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: rendered-stage
+    name: rendered-prod
   targetNamespace: apps-backend-prod-01
   postBuild:
     substituteFrom:
