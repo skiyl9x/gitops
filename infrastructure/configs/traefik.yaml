@@ -24,17 +24,10 @@ spec:
   storageNamespace: traefik-system
   targetNamespace: traefik-system
   values:
-    certificatesResolvers:
-      cloudflare:
-        acme:
-          dnsChallenge:
-            provider: cloudflare
-          email: skiyl9x@gmail.com
-          storage: /data/acme.json
-    env:
-    - name: CF_DNS_API_TOKEN_FILE
-      value: /etc/secrets/api-token
     gateway:
+      annotations:
+        traefik.io/gateway.tls.certresolver: cloudflare
+      enabled: true
       listeners:
         web:
           namespacePolicy:
@@ -72,12 +65,8 @@ spec:
         exposedPort: 443
         http:
           tls:
-            certResolver: cloudflare
+            enabled: true
         port: 8443
     providers:
       kubernetesGateway:
         enabled: true
-    volumes:
-    - mountPath: /etc/secrets
-      name: cloudflare-api-token
-      type: secret
