@@ -19,17 +19,20 @@ spec:
         name: traefik
         namespace: flux-system
   values:
-    certificatesResolvers:
-      cloudflare:
-        acme:
-          email: skiyl9x@gmail.com
-          storage: /data/acme.json
-          dnsChallenge:
-            provider: cloudflare
-    env:
-      - name: CF_DNS_API_TOKEN_FILE
-        value: "/etc/secrets/api-token"
+    #certificatesResolvers:
+    #  cloudflare:
+    #    acme:
+    #      email: skiyl9x@gmail.com
+    #      storage: /data/acme.json
+    #      dnsChallenge:
+    #        provider: cloudflare
+    #env:
+    #  - name: CF_DNS_API_TOKEN_FILE
+    #    value: "/etc/secrets/api-token"
     gateway:
+      enabled: true
+      annotations:
+        traefik.io/gateway.tls.certresolver: cloudflare
       listeners:
         web:
           namespacePolicy:
@@ -70,7 +73,8 @@ spec:
         exposedPort: 443 # What you'll use in your browser (https://<IP>)
         http:
           tls:
-            certResolver: cloudflare
+            enabled: true
+            # certResolver: cloudflare
       traefik:
         expose:
           default: true
@@ -78,8 +82,8 @@ spec:
     providers:
       kubernetesGateway:
         enabled: true
-    volumes:
-      - name: cloudflare-api-token
-        mountPath: /etc/secrets
-        type: secret
+    #volumes:
+    #  - name: cloudflare-api-token
+    #    mountPath: /etc/secrets
+    #    type: secret
 
