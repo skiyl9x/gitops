@@ -25,13 +25,12 @@ spec:
   targetNamespace: traefik-system
   values:
     gateway:
-      annotations:
-        traefik.io/gateway.tls.certresolver: cloudflare
       enabled: true
       listeners:
         web:
           namespacePolicy:
             from: All
+          port: 8000
         websecure:
           certificateRefs:
           - kind: Secret
