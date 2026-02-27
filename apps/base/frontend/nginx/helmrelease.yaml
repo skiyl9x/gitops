@@ -7,13 +7,13 @@ spec:
   chart:
     spec:
       chart: web-app
-      version: 0.1.6
+      version: 0.1.10
       sourceRef:
         kind: HelmRepository
         name: skiyl9x-helm-charts
         namespace: flux-system
   values:
-    appsDomain: ${apps_domain}
+    appsDomain: nginx.${apps_domain}
     env:
       SERVICE_LOG_LEVEL: info
       AMQP_HOST: "rabbitmq.rabbitmq-system.svc"
