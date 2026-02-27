@@ -5,7 +5,9 @@ metadata:
 spec:
   parentRefs:
     - name: traefik-gateway
+      kind: Gateway
       namespace: traefik-system
+      sectionName: websecure
   hostnames:
     - "whoami.${apps_domain}"
   rules:
