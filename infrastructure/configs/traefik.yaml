@@ -44,7 +44,7 @@ spec:
       dashboard:
         enabled: true
         entryPoints:
-        - web
+        - websecure
         matchRule: Host(`traefik-dashboard.${cluster_domain}`)
     logs:
       access:
