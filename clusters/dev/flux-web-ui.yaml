@@ -50,7 +50,7 @@ spec:
       namespace: traefik-system
       sectionName: websecure
   hostnames:
-    - "flux-web.dev.mycluster.com"
+    - "flux-web.dev.my-homelab.com"
   rules:
     - matches:
         - path:
