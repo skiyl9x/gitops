@@ -43,7 +43,7 @@ spec:
         enabled: true
         matchRule: Host(`traefik-dashboard.${cluster_domain}`)
         entryPoints:
-          - web
+          - websecure
     logs:
       # Enable access logs in JSON format and keep all header fields
       access:
