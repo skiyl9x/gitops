@@ -3,10 +3,6 @@ kind: HelmRelease
 metadata:
   name: nginx
 spec:
-  chart:
-    spec:
-      chart: web-app
-      version: 0.1.6
   values:
     env:
       SERVICE_LOG_LEVEL: debug
