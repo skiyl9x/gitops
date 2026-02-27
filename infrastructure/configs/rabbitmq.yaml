@@ -7,8 +7,10 @@ spec:
   hostnames:
   - rabbitmq.${cluster_domain}
   parentRefs:
-  - name: traefik-gateway
+  - kind: Gateway
+    name: traefik-gateway
     namespace: traefik-system
+    sectionName: websecure
   rules:
   - backendRefs:
     - name: rabbitmq
