@@ -35,4 +35,4 @@ spec:
   postBuild:
     substitute:
       cluster_env: "dev"
-      cluster_domain: "dev.mycluster.com"
+      cluster_domain: "dev.my-homelab.com"
