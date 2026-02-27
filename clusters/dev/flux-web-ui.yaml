@@ -45,8 +45,10 @@ metadata:
   namespace: flux-system
 spec:
   parentRefs:
-    - name: traefik-gateway
+    - kind: Gateway
+      name: traefik-gateway
       namespace: traefik-system
+      sectionName: websecure
   hostnames:
     - "flux-web.dev.mycluster.com"
   rules:
