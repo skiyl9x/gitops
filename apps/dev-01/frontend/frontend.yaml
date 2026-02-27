@@ -59,10 +59,10 @@ spec:
         kind: HelmRepository
         name: skiyl9x-helm-charts
         namespace: flux-system
-      version: 0.1.6
+      version: 0.1.10
   interval: 1m
   values:
-    appsDomain: ${apps_domain}
+    appsDomain: nginx.${apps_domain}
     env:
       AMQP_HOST: rabbitmq.rabbitmq-system.svc
       SERVICE_LOG_LEVEL: debug
