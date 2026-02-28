@@ -36,12 +36,6 @@ spec:
             - name: dev-01-skiyl9x-pp-ua-tls
               kind: Secret
               group: ""
-            - name: dev-skiyl9x-pp-ua-wildcard-tls
-              kind: Secret
-              group: ""
-            - name: dev-01-skiyl9x-pp-ua-wildcard-tls
-              kind: Secret
-              group: ""
             - name: nginx-dev-01-skiyl9x-pp-ua-tls
               kind: Secret
               group: ""
