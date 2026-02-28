@@ -45,15 +45,80 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: nginx-dev-01-skiyl9x-pp-ua-tls
+  name: prod-01-skiyl9x-pp-ua-tls
   namespace: traefik-system
 spec:
   dnsNames:
-  - nginx.dev-01.skiyl9x.pp.ua
+  - prod-01.skiyl9x.pp.ua
   issuerRef:
     kind: ClusterIssuer
     name: letsencrypt-dns-issuer
-  secretName: nginx-dev-01-skiyl9x-pp-ua-tls
+  secretName: prod-01-skiyl9x-pp-ua-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: prod-01-skiyl9x-pp-ua-wildcard-tls
+  namespace: traefik-system
+spec:
+  dnsNames:
+  - '*.prod-01.skiyl9x.pp.ua'
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-dns-issuer
+  secretName: prod-01-skiyl9x-pp-ua-wildcard-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: prod-skiyl9x-pp-ua-wildcard-tls
+  namespace: traefik-system
+spec:
+  dnsNames:
+  - '*.prod.skiyl9x.pp.ua'
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-dns-issuer
+  secretName: prod-skiyl9x-pp-ua-wildcard-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: stage-01-skiyl9x-pp-ua-tls
+  namespace: traefik-system
+spec:
+  dnsNames:
+  - stage-01.skiyl9x.pp.ua
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-dns-issuer
+  secretName: stage-01-skiyl9x-pp-ua-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: stage-01-skiyl9x-pp-ua-wildcard-tls
+  namespace: traefik-system
+spec:
+  dnsNames:
+  - '*.stage-01.skiyl9x.pp.ua'
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-dns-issuer
+  secretName: stage-01-skiyl9x-pp-ua-wildcard-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: stage-skiyl9x-pp-ua-wildcard-tls
+  namespace: traefik-system
+spec:
+  dnsNames:
+  - '*.stage.skiyl9x.pp.ua'
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-dns-issuer
+  secretName: stage-skiyl9x-pp-ua-wildcard-tls
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
@@ -138,3 +203,9 @@ spec:
   - secretName: dev-01-skiyl9x-pp-ua-tls
   - secretName: dev-01-skiyl9x-pp-ua-wildcard-tls
   - secretName: dev-skiyl9x-pp-ua-wildcard-tls
+  - secretName: stage-01-skiyl9x-pp-ua-tls
+  - secretName: stage-01-skiyl9x-pp-ua-wildcard-tls
+  - secretName: stage-skiyl9x-pp-ua-wildcard-tls
+  - secretName: prod-01-skiyl9x-pp-ua-tls
+  - secretName: prod-01-skiyl9x-pp-ua-wildcard-tls
+  - secretName: prod-skiyl9x-pp-ua-wildcard-tls
