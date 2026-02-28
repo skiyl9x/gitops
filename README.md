@@ -1,7 +1,10 @@
 # GitOps Repository
 
 
-I'm Oleksandr, DevOps Engineer. This is GitOps Repository. I just starting my HomeLab Project)
+I'm Oleksandr, DevOps Engineer. This is GitOps Repository. I just starting my HomeLab Project 😄
+
+In this repository I'm adapting the architecture from [flux2-kustomize-heml-example](https://github.com/fluxcd/flux2-kustomize-helm-example)
+
 
 Command to delete all resources: 
 
