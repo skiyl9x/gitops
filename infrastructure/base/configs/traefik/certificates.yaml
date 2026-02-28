@@ -40,10 +40,10 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: dev-01-skiyl9x-pp-ua-wildcard-tls
+  name: nginx-dev-01-skiyl9x-pp-ua-tls
   namespace: traefik-system
 spec:
-  secretName: dev-01-skiyl9x-pp-ua-wildcard-tls
+  secretName: nginx-dev-01-skiyl9x-pp-ua-tls
   issuerRef:
     name: letsencrypt-dns-issuer
     kind: ClusterIssuer
