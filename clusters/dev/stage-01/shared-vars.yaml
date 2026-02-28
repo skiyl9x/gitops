@@ -5,4 +5,4 @@ metadata:
   namespace: flux-system
 data:
   apps_env: "stage-01"
-  apps_domain: "stage-01.my-homelab.com"
+  apps_domain: "stage-01.skiyl9x.pp.ua"

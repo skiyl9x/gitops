@@ -5,4 +5,4 @@ metadata:
   namespace: flux-system
 data:
   apps_env: "prod-01"
-  apps_domain: "prod-01.my-homelab.com"
+  apps_domain: "prod-01.skiyl9x.pp.ua"
