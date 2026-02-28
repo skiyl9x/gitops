@@ -12,6 +12,8 @@ spec:
         kind: HelmRepository
         name: skiyl9x-helm-charts
         namespace: flux-system
+  # Default values
+  # https://github.com/skiyl9x/helm-charts/blob/main/charts/web-app/values.yaml
   values:
     appsDomain: nginx.${apps_domain}
     env:
