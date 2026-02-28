@@ -73,8 +73,3 @@ spec:
     providers:
       kubernetesGateway:
         enabled: true
-    volumes:
-      - name: dev-01-skiyl9x-pp-ua-tls
-        mountPath: /certs
-        type: secret
-
