@@ -6,16 +6,16 @@ metadata:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: dev-01-skiyl9x-pp-ua-wildcard-tls
+  name: dev-oleks-01-skiyl9x-pp-ua-wildcard-tls
   namespace: traefik-system
 spec:
   dnsNames:
-  - dev-01.skiyl9x.pp.ua
-  - '*.dev-01.skiyl9x.pp.ua'
+  - dev-oleks-01.skiyl9x.pp.ua
+  - '*.dev-oleks-01.skiyl9x.pp.ua'
   issuerRef:
     kind: ClusterIssuer
     name: letsencrypt-dns-issuer
-  secretName: dev-01-skiyl9x-pp-ua-wildcard-tls
+  secretName: dev-oleks-01-skiyl9x-pp-ua-wildcard-tls
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -90,7 +90,7 @@ spec:
           certificateRefs:
           - group: ""
             kind: Secret
-            name: dev-01-skiyl9x-pp-ua-wildcard-tls
+            name: dev-oleks-01-skiyl9x-pp-ua-wildcard-tls
           mode: Terminate
           namespacePolicy:
             from: All
@@ -134,6 +134,6 @@ metadata:
 spec:
   certificates:
   - secretName: infra-dev-skiyl9x-pp-ua-wildcard-tls
-  - secretName: dev-01-skiyl9x-pp-ua-wildcard-tls
+  - secretName: dev-oleks-01-skiyl9x-pp-ua-wildcard-tls
   - secretName: stage-skiyl9x-pp-ua-wildcard-tls
   - secretName: skiyl9x-pp-ua-wildcard-tls
