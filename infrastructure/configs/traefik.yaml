@@ -94,6 +94,9 @@ spec:
           - group: ""
             kind: Secret
             name: dev-01-skiyl9x-pp-ua-wildcard-tls
+          - group: ""
+            kind: Secret
+            name: nginx-dev-01-skiyl9x-pp-ua-tls
           mode: Terminate
           namespacePolicy:
             from: All
