@@ -55,5 +55,5 @@ kubectl create secret docker-registry github-oci-auth --namespace=flux-system --
 Create secret for CloudFlare API (required for automatic SSL generation)
 ```
 kubectl create secret generic cloudflare-api-token \
-  --from-literal=api-token=YOUR_TOKEN_HERE -n traefik-system
+  --from-literal=api-token=YOUR_TOKEN_HERE -n cert-manager-system
 ```
