@@ -19,6 +19,19 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
+  name: dev-01-skiyl9x-pp-ua-wildcard-tls
+  namespace: traefik-system
+spec:
+  dnsNames:
+  - '*.dev-01.skiyl9x.pp.ua'
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-dns-issuer
+  secretName: dev-01-skiyl9x-pp-ua-wildcard-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
   name: dev-skiyl9x-pp-ua-wildcard-tls
   namespace: traefik-system
 spec:
@@ -65,6 +78,9 @@ spec:
           - group: ""
             kind: Secret
             name: dev-skiyl9x-pp-ua-wildcard-tls
+          - group: ""
+            kind: Secret
+            name: dev-01-skiyl9x-pp-ua-wildcard-tls
           mode: Terminate
           namespacePolicy:
             from: All
