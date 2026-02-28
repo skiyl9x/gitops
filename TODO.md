@@ -11,7 +11,7 @@
 - [x] Add image tag automation for dev-01 env
 - [x] Enable Self-Signed SSL for all services
 - [x] Add automatic certificate generation with cert-manager
-- [ ] Add let's encrypt certs for rest services
+- [x] Add let's encrypt certs for rest services
 - [ ] Try Service Mesh, connect services to each other
 - [ ] Change FluxCD architecture, use OCI artifacts instead of code in GitHub branches to deploy
 - [ ] Go through all your current deployments (RabbitMQ, Prometheus, etc.) and explicitly set resources.requests and resources.limits. Try to "OOMKill" (Out of Memory Kill) a pod by setting a limit too low to see how Kubernetes reacts.
