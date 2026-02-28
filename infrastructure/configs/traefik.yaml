@@ -88,6 +88,7 @@ spec:
           - group: ""
             kind: Secret
             name: nginx-dev-01-skiyl9x-pp-ua-tls
+            namespace: apps-frontend-dev-01
           - group: ""
             kind: Secret
             name: dev-01-skiyl9x-pp-ua-tls
