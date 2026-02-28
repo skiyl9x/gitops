@@ -127,3 +127,13 @@ spec:
     providers:
       kubernetesGateway:
         enabled: true
+---
+apiVersion: traefik.io/v1alpha1
+kind: TLSStore
+metadata:
+  name: default
+  namespace: traefik-system
+spec:
+  certificates:
+  - secretName: nginx-dev-01-skiyl9x-pp-ua-tls
+  - secretName: dev-01-skiyl9x-pp-ua-tls
