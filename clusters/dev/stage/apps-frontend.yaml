@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: apps-backend-prod-01
+  name: apps-frontend-stage
 ---
 apiVersion: v1
 kind: LimitRange
 metadata:
-  name: apps-backend-prod-01
-  namespace: apps-backend-prod-01
+  name: apps-frontend-stage
+  namespace: apps-frontend-stage
 spec:
   limits:
   - default:
@@ -21,17 +21,17 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: apps-backend-prod-01
+  name: apps-frontend-stage
   namespace: flux-system
 spec:
   interval: 1m
-  path: ./apps/prod-01/backend/
+  path: ./apps/stage/frontend/
   prune: true
   sourceRef:
     kind: GitRepository
-    name: rendered-prod
-  targetNamespace: apps-backend-prod-01
+    name: rendered-stage
+  targetNamespace: apps-frontend-stage
   postBuild:
     substituteFrom:
       - kind: ConfigMap
-        name: shared-vars-prod-01
+        name: shared-vars-stage

@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: shared-vars-stage-01
-  namespace: flux-system
-data:
-  apps_env: "stage-01"
-  apps_domain: "stage-01.skiyl9x.pp.ua"

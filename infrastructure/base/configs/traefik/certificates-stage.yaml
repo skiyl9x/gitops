@@ -1,19 +1,6 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: stage-01-skiyl9x-pp-ua-tls
-  namespace: traefik-system
-spec:
-  secretName: stage-01-skiyl9x-pp-ua-tls
-  issuerRef:
-    name: letsencrypt-dns-issuer
-    kind: ClusterIssuer
-  dnsNames:
-    - "stage-01.skiyl9x.pp.ua"
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
   name: stage-skiyl9x-pp-ua-wildcard-tls
   namespace: traefik-system
 spec:
@@ -22,18 +9,18 @@ spec:
     name: letsencrypt-dns-issuer
     kind: ClusterIssuer
   dnsNames:
+    - "stage.skiyl9x.pp.ua"
     - "*.stage.skiyl9x.pp.ua"
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: stage-01-skiyl9x-pp-ua-wildcard-tls
+  name: infra-stage-skiyl9x-pp-ua-wildcard-tls
   namespace: traefik-system
 spec:
-  secretName: stage-01-skiyl9x-pp-ua-wildcard-tls
+  secretName: infra-stage-skiyl9x-pp-ua-wildcatd-tls
   issuerRef:
     name: letsencrypt-dns-issuer
     kind: ClusterIssuer
   dnsNames:
-    - "*.stage-01.skiyl9x.pp.ua"
-
+    - "*.infra.stage.skiyl9x.pp.ua"
