@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shared-vars-dev-oleks-01
+  namespace: flux-system
+data:
+  apps_env: "dev-oleks-01"
+  apps_domain: "dev-oleks-01.skiyl9x.pp.ua"

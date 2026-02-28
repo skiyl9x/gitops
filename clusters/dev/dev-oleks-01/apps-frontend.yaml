@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: apps-backend-dev-01
+  name: apps-frontend-dev-oleks-01
 ---
 apiVersion: v1
 kind: LimitRange
 metadata:
-  name: apps-backend-dev-01
-  namespace: apps-backend-dev-01
+  name: apps-frontend-dev-oleks-01
+  namespace: apps-frontend-dev-oleks-01
 spec:
   limits:
   - default:
@@ -21,17 +21,17 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: apps-backend-dev-01
+  name: apps-frontend-dev-oleks-01
   namespace: flux-system
 spec:
   interval: 1m
-  path: ./apps/dev-01/backend/
+  path: ./apps/dev-oleks-01/frontend/
   prune: true
   sourceRef:
     kind: GitRepository
     name: rendered-dev
-  targetNamespace: apps-backend-dev-01
+  targetNamespace: apps-frontend-dev-oleks-01
   postBuild:
     substituteFrom:
       - kind: ConfigMap
-        name: shared-vars-dev-01
+        name: shared-vars-dev-oleks-01
