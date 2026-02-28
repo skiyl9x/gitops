@@ -1,7 +1,6 @@
-# GitOps Repository
+# GitOps
 
-
-I'm Oleksandr, DevOps Engineer. This is GitOps Repository. I adabped the architecture from this fluxcd repository - [flux2-kustomize-heml-example](https://github.com/fluxcd/flux2-kustomize-helm-example)
+The architecture is adapted from this fluxcd repository - [flux2-kustomize-heml-example](https://github.com/fluxcd/flux2-kustomize-helm-example)
 
 
 Command to delete all resources: 
