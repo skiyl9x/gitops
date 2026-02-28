@@ -5,4 +5,4 @@ metadata:
   namespace: flux-system
 data:
   apps_env: "prod-01"
-  apps_domain: "prod-01.skiyl9x.pp.ua"
+  apps_domain: "skiyl9x.pp.ua"
