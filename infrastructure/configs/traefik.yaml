@@ -33,33 +33,7 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: infra-prod-skiyl9x-pp-ua-wildcard-tls
-  namespace: traefik-system
-spec:
-  dnsNames:
-  - '*.infra.skiyl9x.pp.ua'
-  issuerRef:
-    kind: ClusterIssuer
-    name: letsencrypt-dns-issuer
-  secretName: infra-prod-skiyl9x-pp-ua-wildcatd-tls
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: infra-stage-skiyl9x-pp-ua-wildcard-tls
-  namespace: traefik-system
-spec:
-  dnsNames:
-  - '*.infra.stage.skiyl9x.pp.ua'
-  issuerRef:
-    kind: ClusterIssuer
-    name: letsencrypt-dns-issuer
-  secretName: infra-stage-skiyl9x-pp-ua-wildcatd-tls
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: prod-skiyl9x-pp-ua-wildcard-tls
+  name: skiyl9x-pp-ua-wildcard-tls
   namespace: traefik-system
 spec:
   dnsNames:
@@ -68,7 +42,7 @@ spec:
   issuerRef:
     kind: ClusterIssuer
     name: letsencrypt-dns-issuer
-  secretName: prod-skiyl9x-pp-ua-wildcard-tls
+  secretName: skiyl9x-pp-ua-wildcard-tls
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -159,9 +133,7 @@ metadata:
   namespace: traefik-system
 spec:
   certificates:
-  - secretName: dev-01-skiyl9x-pp-ua-wildcard-tls
   - secretName: infra-dev-skiyl9x-pp-ua-wildcard-tls
+  - secretName: dev-01-skiyl9x-pp-ua-wildcard-tls
   - secretName: stage-skiyl9x-pp-ua-wildcard-tls
-  - secretName: infra-stage-skiyl9x-pp-ua-wildcard-tls
-  - secretName: prod-skiyl9x-pp-ua-wildcard-tls
-  - secretName: infra-prod-skiyl9x-pp-ua-wildcard-tls
+  - secretName: skiyl9x-pp-ua-wildcard-tls
