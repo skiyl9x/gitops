@@ -25,3 +25,17 @@ spec:
     crds:
       enabled: true
       keep: false
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: cert-manager
+  namespace: cert-manager-system
+spec:
+  interval: 1m
+  layerSelector:
+    mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
+    operation: copy
+  ref:
+    semver: 1.x
+  url: oci://quay.io/jetstack/charts/cert-manager
