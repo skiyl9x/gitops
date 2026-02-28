@@ -3,6 +3,19 @@ kind: Namespace
 metadata:
   name: traefik-system
 ---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: dev-01-skiyl9x-pp-ua-tls
+  namespace: traefik-system
+spec:
+  dnsNames:
+  - dev-01.skiyl9x.pp.ua
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-dns-issuer
+  secretName: dev-01-skiyl9x-pp-ua-tls
+---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
