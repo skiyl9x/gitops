@@ -39,6 +39,9 @@ spec:
             - name: dev-skiyl9x-pp-ua-wildcard-tls
               kind: Secret
               group: ""
+            - name: dev-01-skiyl9x-pp-ua-wildcard-tls
+              kind: Secret
+              group: ""
           namespacePolicy:
             from: All
     ingressRoute:
