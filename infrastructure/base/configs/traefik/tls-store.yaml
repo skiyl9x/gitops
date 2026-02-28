@@ -6,6 +6,6 @@ metadata:
 spec:
   certificates:
     - secretName: infra-dev-skiyl9x-pp-ua-wildcard-tls
-    - secretName: dev-01-skiyl9x-pp-ua-wildcard-tls
+    - secretName: dev-oleks-01-skiyl9x-pp-ua-wildcard-tls
     - secretName: stage-skiyl9x-pp-ua-wildcard-tls
     - secretName: skiyl9x-pp-ua-wildcard-tls
