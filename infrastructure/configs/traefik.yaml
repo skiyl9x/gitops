@@ -43,17 +43,16 @@ spec:
         web:
           namespacePolicy:
             from: All
-          port: 8000
+          port: 80
         websecure:
           certificateRefs:
-          - kind: Secret
-            name: app-certs
-          - kind: Secret
+          - group: ""
+            kind: Secret
             name: dev-01-skiyl9x-pp-ua-tls
           mode: Terminate
           namespacePolicy:
             from: All
-          port: 8443
+          port: 443
           protocol: HTTPS
     ingressRoute:
       dashboard:
@@ -74,13 +73,13 @@ spec:
           default: true
       web:
         exposedPort: 80
-        port: 8000
+        port: 80
       websecure:
         exposedPort: 443
         http:
           tls:
             enabled: true
-        port: 8443
+        port: 443
     providers:
       kubernetesGateway:
         enabled: true
