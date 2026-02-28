@@ -36,6 +36,7 @@ spec:
             - name: nginx-dev-01-skiyl9x-pp-ua-tls
               kind: Secret
               group: ""
+              namespace: apps-frontend-dev-01
             - name: dev-01-skiyl9x-pp-ua-tls
               kind: Secret
               group: ""
