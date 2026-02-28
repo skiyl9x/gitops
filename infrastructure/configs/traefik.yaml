@@ -116,12 +116,7 @@ spec:
           certificateRefs:
           - group: ""
             kind: Secret
-            name: nginx-dev-01-skiyl9x-pp-ua-tls
-            namespace: traefik-system
-          - group: ""
-            kind: Secret
-            name: dev-01-skiyl9x-pp-ua-tls
-            namespace: traefik-system
+            name: dev-01-skiyl9x-pp-ua-wildcard-tls
           mode: Terminate
           namespacePolicy:
             from: All
