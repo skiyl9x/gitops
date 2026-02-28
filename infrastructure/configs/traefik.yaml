@@ -135,5 +135,6 @@ metadata:
   namespace: traefik-system
 spec:
   certificates:
-  - secretName: nginx-dev-01-skiyl9x-pp-ua-tls
   - secretName: dev-01-skiyl9x-pp-ua-tls
+  - secretName: dev-01-skiyl9x-pp-ua-wildcard-tls
+  - secretName: dev-skiyl9x-pp-ua-wildcard-tls
