@@ -48,6 +48,8 @@ spec:
           certificateRefs:
           - kind: Secret
             name: app-certs
+          - kind: Secret
+            name: dev-01-skiyl9x-pp-ua-tls-46dg2
           mode: Terminate
           namespacePolicy:
             from: All
