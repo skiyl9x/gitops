@@ -40,7 +40,8 @@ oshyd@1H851821G3:~/MyProjects/portfolio/infrastructure/base/configs/metallb$ min
 
 Add next to the /etc/hosts
 ```
-192.168.39.180  traefik-dashboard.dev.mycluster.com whoami.dev-01.mycluster.com nginx.dev-01.mycluster.com rabbitmq.dev.mycluster.com flux-web.dev.mycluster.com grafana.dev.mycluster.com
+192.168.39.180  traefik-dashboard.dev.my-homelab.com whoami.dev-01.my-homelab.com nginx.dev-01.my-homelab.com rabbitmq.dev.my-homelab.com flux-web.dev.my-homelab.com grafana.dev.my-homelab.com whoami.stage-01.my-homelab.com nginx.stage-01.my-homelab.com whoami.prod-01.my-homelab.com  nginx.prod-01.my-homelab.com dev-01.my-homelab.com stage-01.my-homelab.com prod-01.my-homelab.com
+
 ```
 
 
