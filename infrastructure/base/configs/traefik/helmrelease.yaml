@@ -24,19 +24,18 @@ spec:
       listeners:
         # Configure the web listener to allow traffic from all namespaces
         web:
-          port: 8000
+          port: 80
           namespacePolicy:
             from: All
         # Configure the websecure listener to use TLS with the specified certificate and allow traffic from all namespaces
         websecure:
-          port: 8443
+          port: 443
           protocol: HTTPS
           mode: Terminate
           certificateRefs:
-            - name: app-certs
-              kind: Secret
             - name: dev-01-skiyl9x-pp-ua-tls
               kind: Secret
+              group: ""
           namespacePolicy:
             from: All
     ingressRoute:
@@ -61,11 +60,11 @@ spec:
           default: true
       # Expose the web entrypoint on port 80
       web:
-        port: 8000
+        port: 80
         exposedPort: 80
       # Expose the websecure entrypoint on port 443
       websecure:
-        port: 8443
+        port: 443
         exposedPort: 443
         http:
           tls:
