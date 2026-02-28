@@ -87,11 +87,11 @@ spec:
           certificateRefs:
           - group: ""
             kind: Secret
-            name: dev-01-skiyl9x-pp-ua-tls
+            name: nginx-dev-01-skiyl9x-pp-ua-tls
             namespace: traefik-system
           - group: ""
             kind: Secret
-            name: nginx-dev-01-skiyl9x-pp-ua-tls
+            name: dev-01-skiyl9x-pp-ua-tls
             namespace: traefik-system
           mode: Terminate
           namespacePolicy:
