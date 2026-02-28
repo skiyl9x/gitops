@@ -12,5 +12,4 @@ spec:
     - secretName: stage-01-skiyl9x-pp-ua-wildcard-tls
     - secretName: stage-skiyl9x-pp-ua-wildcard-tls
     - secretName: prod-01-skiyl9x-pp-ua-tls
-    - secretName: prod-01-skiyl9x-pp-ua-wildcard-tls
     - secretName: prod-skiyl9x-pp-ua-wildcard-tls
