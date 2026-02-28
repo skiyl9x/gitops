@@ -33,14 +33,9 @@ spec:
           protocol: HTTPS
           mode: Terminate
           certificateRefs:
-            - name: nginx-dev-01-skiyl9x-pp-ua-tls
+            - name: dev-01-skiyl9x-pp-ua-wildcard-tls
               kind: Secret
               group: ""
-              namespace: traefik-system
-            - name: dev-01-skiyl9x-pp-ua-tls
-              kind: Secret
-              group: ""
-              namespace: traefik-system
           namespacePolicy:
             from: All
     ingressRoute:
