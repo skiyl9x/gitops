@@ -33,7 +33,7 @@ spec:
           protocol: HTTPS
           mode: Terminate
           certificateRefs:
-            - name: dev-oleks-01-skiyl9x-pp-ua-wildcard-tls
+            - name: dev-01-skiyl9x-pp-ua-wildcard-tls
               kind: Secret
               group: ""
           namespacePolicy:
