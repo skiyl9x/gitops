@@ -75,7 +75,7 @@ spec:
       repository: nginx
       tag: "1.22"
     nameOverride: nginx
-    replicaCount: 4
+    replicaCount: 1
     resources:
       limits:
         memory: 128Mi
