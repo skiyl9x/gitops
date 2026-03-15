@@ -19,6 +19,11 @@ spec:
         name: traefik
         namespace: flux-system
   values:
+    deployment:
+      podAnnotations:
+        sidecar.istio.io/inject: "true"
+        # Prevents race conditions where Traefik starts before the mesh proxy is up
+        proxy.istio.io/config: '{ "holdApplicationUntilProxyReceivesConfig": true }'
     gateway:
       enabled: true
       listeners:
@@ -73,3 +78,4 @@ spec:
     providers:
       kubernetesGateway:
         enabled: true
+      
