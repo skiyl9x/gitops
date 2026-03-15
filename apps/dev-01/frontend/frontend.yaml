@@ -125,6 +125,6 @@ spec:
   http:
   - route:
     - destination:
-        host: web-page.apps-frontend-dev-01.svc
+        host: web-page.apps-frontend-dev-01.svc.cluster.local
         port:
           number: 80
