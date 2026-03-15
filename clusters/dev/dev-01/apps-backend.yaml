@@ -5,6 +5,15 @@ metadata:
   labels:
     istio-injection: enabled
 ---
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: default
+  namespace: apps-backend-dev-01
+spec:
+  mtls:
+    mode: STRICT
+---
 apiVersion: v1
 kind: LimitRange
 metadata:
