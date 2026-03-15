@@ -9,6 +9,7 @@ spec:
   http:
     - route:
         - destination:
-            host: web-page.apps-frontend-dev-01.svc.cluster.local # The internal identity
+            #host: web-page.apps-frontend-dev-01.svc.cluster.local # The internal identity
+            host: web-page.apps-frontend-dev-01.svc
             port:
               number: 80
