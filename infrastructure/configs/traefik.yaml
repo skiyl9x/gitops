@@ -122,12 +122,14 @@ spec:
           default: true
       web:
         exposedPort: 80
+        name: http-web
         port: 80
       websecure:
         exposedPort: 443
         http:
           tls:
             enabled: true
+        name: https-websecure
         port: 443
     providers:
       kubernetesGateway:
