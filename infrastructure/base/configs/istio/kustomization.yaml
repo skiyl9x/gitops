@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - helmrelease.yaml
   - https://raw.githubusercontent.com/istio/istio/release-1.29/samples/addons/kiali.yaml
+  - httproute.yaml
