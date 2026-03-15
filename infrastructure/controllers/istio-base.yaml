@@ -20,6 +20,7 @@ spec:
   install:
     crds: CreateReplace
     createNamespace: true
+  interval: 1h
   releaseName: istio-base
   upgrade:
     crds: CreateReplace
