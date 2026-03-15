@@ -46,3 +46,13 @@ spec:
   url: oci://ghcr.io/skiyl9x/helm-charts
   secretRef:
     name: github-oci-auth
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: istio
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://istio-release.storage.googleapis.com/charts
+
