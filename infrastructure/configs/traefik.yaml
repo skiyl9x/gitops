@@ -81,6 +81,11 @@ spec:
   storageNamespace: traefik-system
   targetNamespace: traefik-system
   values:
+    deployment:
+      podAnnotations:
+        proxy.istio.io/config: '{ "holdApplicationUntilProxyReceivesConfig": true
+          }'
+        sidecar.istio.io/inject: "true"
     gateway:
       enabled: true
       listeners:
