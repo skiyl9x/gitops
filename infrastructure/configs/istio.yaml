@@ -471,7 +471,7 @@ spec:
   rules:
   - backendRefs:
     - name: kiali
-      port: 80
+      port: http
     matches:
     - path:
         type: PathPrefix
