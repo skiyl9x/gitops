@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: kiali-operator
+  namespace: flux-system # Краще тримати оператор тут
+spec:
+  targetNamespace: kiali-operator # Створить неймспейс для себе
+  chart:
+    spec:
+      chart: kiali-operator
+      version: "1.89.x" # Актуальна версія на 2026 рік
+      sourceRef:
+        kind: HelmRepository
+        name: kiali
+        namespace: flux-system
+  install:
+    createNamespace: true
