@@ -18,5 +18,5 @@ spec:
             value: /
       backendRefs:
         - name: kiali
-          port: http
+          port: 20001
 
