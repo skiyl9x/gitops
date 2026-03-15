@@ -1,0 +1,14 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: web-page-mesh-gateway
+  namespace: apps-frontend-dev-01
+spec:
+  hosts:
+    - "dev-01.skiyl9x.pp.ua" # The name in your logs
+  http:
+    - route:
+        - destination:
+            host: web-page.apps-frontend-dev-01.svc.cluster.local # The internal identity
+            port:
+              number: 80
