@@ -65,12 +65,10 @@ spec:
           default: true
       # Expose the web entrypoint on port 80
       web:
-        name: http-web
         port: 80
         exposedPort: 80
       # Expose the websecure entrypoint on port 443
       websecure:
-        name: https-websecure
         port: 443
         exposedPort: 443
         http:
