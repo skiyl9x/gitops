@@ -78,4 +78,6 @@ spec:
     providers:
       kubernetesGateway:
         enabled: true
+        
+        nativeLBByDefault: true
       
