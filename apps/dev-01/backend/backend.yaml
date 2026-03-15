@@ -34,7 +34,7 @@ spec:
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
-  name: web-page-mesh-gateway
+  name: api-service-mesh-gateway
   namespace: apps-backend-dev-01
 spec:
   hosts:
