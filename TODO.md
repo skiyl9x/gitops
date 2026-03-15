@@ -12,7 +12,7 @@
 - [x] Enable Self-Signed SSL for all services
 - [x] Add automatic certificate generation with cert-manager
 - [x] Add let's encrypt certs for rest services
-- [ ] Try Service Mesh, connect services to each other
+- [x] Try Service Mesh, connect services to each other (Installed Istio and enabled mTLS for communication between Traefik and web-page app)
 - [ ] Change FluxCD architecture, use OCI artifacts instead of code in GitHub branches to deploy
 - [ ] Go through all your current deployments (RabbitMQ, Prometheus, etc.) and explicitly set resources.requests and resources.limits. Try to "OOMKill" (Out of Memory Kill) a pod by setting a limit too low to see how Kubernetes reacts.
 - [ ] Implement Pod Anti-Affinity
