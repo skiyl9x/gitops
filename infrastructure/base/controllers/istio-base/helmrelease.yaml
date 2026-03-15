@@ -5,6 +5,7 @@ metadata:
   namespace: istio-system
 spec:
   releaseName: istio-base
+  interval: 1h
   chart:
     spec:
       chart: base
