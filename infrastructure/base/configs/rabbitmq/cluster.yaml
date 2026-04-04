@@ -29,3 +29,10 @@ spec:
               runAsUser: 999
             containers:
               - name: rabbitmq
+                resources:
+                  requests:
+                    cpu: "100m"     # Reduced from 500m+
+                    memory: "256Mi" # Reduced from 1Gi+
+                  limits:
+                    cpu: "500m"
+                    memory: "512Mi"
