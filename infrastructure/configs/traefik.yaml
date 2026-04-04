@@ -117,18 +117,18 @@ spec:
             defaultMode: keep
         format: json
     ports:
-      http:
+      traefik:
+        expose:
+          default: true
+      web:
         exposedPort: 80
         port: 80
-      https:
+      websecure:
         exposedPort: 443
         http:
           tls:
             enabled: true
         port: 443
-      traefik:
-        expose:
-          default: true
     providers:
       kubernetesGateway:
         enabled: true
