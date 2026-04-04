@@ -7,6 +7,7 @@ spec:
   targetNamespace: kiali-operator # Створить неймспейс для себе
   chart:
     spec:
+      interval: 1h
       chart: kiali-operator
       version: "1.89.x" # Актуальна версія на 2026 рік
       sourceRef:
