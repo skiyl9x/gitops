@@ -141,7 +141,7 @@ metadata:
   namespace: traefik-system
 spec:
   hosts:
-  - skiyl9x.pp.ua
+  - dev-01.skiyl9x.pp.ua
   location: MESH_INTERNAL
   ports:
   - name: http
