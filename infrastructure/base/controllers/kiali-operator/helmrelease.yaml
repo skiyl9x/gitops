@@ -5,8 +5,8 @@ metadata:
   namespace: flux-system # Краще тримати оператор тут
 spec:
   targetNamespace: kiali-operator # Створить неймспейс для себе
+  interval: 1h
   chart:
-    interval: 1h
     spec:
       chart: kiali-operator
       version: "1.89.x" # Актуальна версія на 2026 рік
