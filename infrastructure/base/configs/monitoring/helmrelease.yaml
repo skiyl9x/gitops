@@ -48,9 +48,12 @@ spec:
         initContainers:
           - name: init-chmod-data
             image: busybox:latest
-            command: ["sh", "-c", "chmod -R 777 /prometheus"]
+            command: ["sh", "-c", "chown -R 65534:65534 /prometheus"]
             securityContext:
-              runAsUser: 1000
+              # These three fields are the "keys" to enabling root
+              runAsUser: 0
+              runAsNonRoot: false
+              allowPrivilegeEscalation: true
             volumeMounts:
               - name: prometheus-kube-prometheus-stack-prometheus-db
                 mountPath: /prometheus
