@@ -59,11 +59,13 @@ spec:
         - command:
           - sh
           - -c
-          - chmod -R 777 /prometheus
+          - chown -R 65534:65534 /prometheus
           image: busybox:latest
           name: init-chmod-data
           securityContext:
-            runAsUser: 1000
+            allowPrivilegeEscalation: true
+            runAsNonRoot: false
+            runAsUser: 0
           volumeMounts:
           - mountPath: /prometheus
             name: prometheus-kube-prometheus-stack-prometheus-db
