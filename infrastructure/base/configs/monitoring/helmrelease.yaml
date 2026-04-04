@@ -45,15 +45,15 @@ spec:
                   storage: 10Gi
         # If your storage provider (like some NFS or Local Path) is stubborn, 
         # use the built-in initContainer to force the fix:
-        initContainers:
-          - name: init-chmod-data
-            image: busybox:latest
-            command: ["sh", "-c", "chown -R 65534:65534 /prometheus"]
-            securityContext:
-              runAsUser: 0
-            volumeMounts:
-              - name: prometheus-{{ template "kube-prometheus-stack.fullname" . }}-prometheus-db
-                mountPath: /prometheus
+     #   initContainers:
+     #     - name: init-chmod-data
+     #       image: busybox:latest
+     #       command: ["sh", "-c", "chown -R 65534:65534 /prometheus"]
+     #       securityContext:
+     #         runAsUser: 0
+     #       volumeMounts:
+     #         - name: prometheus-{{ template "kube-prometheus-stack.fullname" . }}-prometheus-db
+     #           mountPath: /prometheus
 
     # Disable Alertmanager if you don't need emails/slack pings yet
     alertmanager:
