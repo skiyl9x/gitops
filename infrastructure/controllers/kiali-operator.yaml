@@ -5,9 +5,9 @@ metadata:
   namespace: flux-system
 spec:
   chart:
+    interval: 1h
     spec:
       chart: kiali-operator
-      interval: 1h
       sourceRef:
         kind: HelmRepository
         name: kiali
