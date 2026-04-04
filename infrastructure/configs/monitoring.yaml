@@ -55,6 +55,18 @@ spec:
         size: 5Gi
     prometheus:
       prometheusSpec:
+        initContainers:
+        - command:
+          - sh
+          - -c
+          - chown -R 65534:65534 /prometheus
+          image: busybox:latest
+          name: init-chmod-data
+          securityContext:
+            runAsUser: 0
+          volumeMounts:
+          - mountPath: /prometheus
+            name: prometheus-kube-prometheus-stack-prometheus-db
         retention: 10d
         securityContext:
           fsGroup: 65534
