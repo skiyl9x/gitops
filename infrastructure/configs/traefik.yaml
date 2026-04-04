@@ -73,7 +73,7 @@ spec:
         kind: HelmRepository
         name: traefik
         namespace: flux-system
-      version: 39.0.0
+      version: 39.0.7
   install:
     createNamespace: true
   interval: 1m
