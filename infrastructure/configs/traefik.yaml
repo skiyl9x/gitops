@@ -134,6 +134,24 @@ spec:
         enabled: true
         nativeLBByDefault: true
 ---
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: external-to-internal-bridge
+  namespace: traefik-system
+spec:
+  hosts:
+  - skiyl9x.pp.ua
+  location: MESH_INTERNAL
+  ports:
+  - name: http
+    number: 80
+    protocol: HTTP
+  - name: https
+    number: 443
+    protocol: HTTPS
+  resolution: NONE
+---
 apiVersion: traefik.io/v1alpha1
 kind: TLSStore
 metadata:
