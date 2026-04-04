@@ -55,7 +55,24 @@ spec:
         size: 5Gi
     prometheus:
       prometheusSpec:
+        initContainers:
+        - command:
+          - sh
+          - -c
+          - chown -R 65534:65534 /prometheus
+          image: busybox:latest
+          name: init-chmod-data
+          securityContext:
+            runAsUser: 0
+          volumeMounts:
+          - mountPath: /prometheus
+            name: prometheus-{{ template "kube-prometheus-stack.fullname" . }}-prometheus-db
         retention: 10d
+        securityContext:
+          fsGroup: 65534
+          runAsGroup: 65534
+          runAsNonRoot: true
+          runAsUser: 65534
         storageSpec:
           volumeClaimTemplate:
             spec:
