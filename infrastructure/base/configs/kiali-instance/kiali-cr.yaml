@@ -1,0 +1,18 @@
+apiVersion: kiali.io/v1alpha1
+kind: Kiali
+metadata:
+  name: kiali
+  namespace: istio-system
+spec:
+  auth:
+    strategy: anonymous # Change to 'openid' or 'token' later
+  deployment:
+    instance_name: kiali
+    namespace: istio-system
+    view_only_mode: false
+  external_services:
+    prometheus:
+      url: "http://kube-prometheus-stack-prometheus.monitoring-system.svc:9090"
+    grafana:
+      enabled: true
+      url: "http://kube-prometheus-stack-grafana.monitoring-system.svc.cluster.local:3000"
