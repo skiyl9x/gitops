@@ -117,13 +117,13 @@ spec:
             defaultMode: keep
         format: json
     ports:
-      traefik:
+      http-traefik:
         expose:
           default: true
-      web:
+      http-web:
         exposedPort: 80
         port: 80
-      websecure:
+      https-websecure:
         exposedPort: 443
         http:
           tls:
