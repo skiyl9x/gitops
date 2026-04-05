@@ -11,6 +11,10 @@ spec:
     namespace: istio-system
     view_only_mode: false
   external_services:
+    istio:
+      gateway_api_classes:
+        - name: "Istio"
+          class_name: "istio"
     prometheus:
       url: "http://kube-prometheus-stack-prometheus.monitoring-system.svc:9090"
     grafana:
