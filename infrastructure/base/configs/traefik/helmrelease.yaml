@@ -67,7 +67,6 @@ spec:
       web:
         port: 80
         exposedPort: 80
-        name: http-web
       # Expose the websecure entrypoint on port 443
       websecure:
         port: 443
@@ -75,7 +74,6 @@ spec:
         http:
           tls:
             enabled: true
-        name: https-websecure
     # Enable the Gateway API provider
     providers:
       kubernetesGateway:
