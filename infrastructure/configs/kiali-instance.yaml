@@ -40,5 +40,7 @@ spec:
       gateway_api_classes:
       - class_name: istio
         name: Istio
+      - class_name: traefik
+        name: Traefik
     prometheus:
       url: http://kube-prometheus-stack-prometheus.monitoring-system.svc:9090
