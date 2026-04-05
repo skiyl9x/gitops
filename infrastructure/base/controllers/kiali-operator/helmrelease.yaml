@@ -16,3 +16,10 @@ spec:
         namespace: flux-system
   install:
     createNamespace: true
+  values:
+    kiali_vars:
+      external_services:
+        istio:
+          gateway_api_classes:
+            - name: "Traefik"
+              class_name: "traefik"
