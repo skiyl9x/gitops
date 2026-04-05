@@ -30,21 +30,3 @@ spec:
         memory: 64Mi
     route:
       path: /api/
----
-apiVersion: networking.istio.io/v1beta1
-kind: VirtualService
-metadata:
-  name: api-service-mesh-gateway
-  namespace: apps-backend-dev-01
-spec:
-  hosts:
-  - dev-01.skiyl9x.pp.ua
-  http:
-  - match:
-    - uri:
-        prefix: /api/
-    route:
-    - destination:
-        host: api-service.apps-backend-dev-01.svc.cluster.local
-        port:
-          number: 80
