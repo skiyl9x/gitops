@@ -38,7 +38,7 @@ metadata:
   namespace: apps-backend-dev-01
 spec:
   gateways:
-  - traefik-gateway
+  - traefik-system/traefik-gateway
   hosts:
   - dev-01.skiyl9x.pp.ua
   http:
