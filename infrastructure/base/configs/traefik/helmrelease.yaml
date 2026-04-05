@@ -60,20 +60,22 @@ spec:
             defaultMode: keep
     ports:
       # Expose the dashboard on port 8080
-      http-traefik:
+      traefik:
         expose:
           default: true
       # Expose the web entrypoint on port 80
-      http-web:
+      web:
         port: 80
         exposedPort: 80
+        name: http-web
       # Expose the websecure entrypoint on port 443
-      https-websecure:
+      websecure:
         port: 443
         exposedPort: 443
         http:
           tls:
             enabled: true
+        name: https-websecure
     # Enable the Gateway API provider
     providers:
       kubernetesGateway:
