@@ -7,7 +7,7 @@ spec:
   hosts:
     - "dev-01.skiyl9x.pp.ua"
   gateways:
-    - traefik-gateway
+    - traefik-system/traefik-gateway
   http:
     - match:
         - uri:
