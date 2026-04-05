@@ -16,3 +16,10 @@ spec:
     createNamespace: true
   interval: 1h
   targetNamespace: kiali-operator
+  values:
+    kiali_vars:
+      external_services:
+        istio:
+          gateway_api_classes:
+          - class_name: traefik
+            name: Traefik
