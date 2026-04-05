@@ -6,6 +6,8 @@ metadata:
 spec:
   hosts:
     - "dev-01.skiyl9x.pp.ua"
+  gateways:
+    - traefik-gateway
   http:
     - match:
         - uri:
