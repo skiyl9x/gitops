@@ -123,7 +123,10 @@ spec:
   hosts:
   - dev-01.skiyl9x.pp.ua
   http:
-  - route:
+  - match:
+    - uri:
+        prefix: /
+    route:
     - destination:
         host: web-page.apps-frontend-dev-01.svc.cluster.local
         port:
