@@ -36,5 +36,9 @@ spec:
     grafana:
       enabled: true
       url: http://kube-prometheus-stack-grafana.monitoring-system.svc.cluster.local:3000
+    istio:
+      gateway_api_classes:
+      - class_name: istio
+        name: Istio
     prometheus:
       url: http://kube-prometheus-stack-prometheus.monitoring-system.svc:9090
