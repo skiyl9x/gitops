@@ -151,8 +151,6 @@ metadata:
   name: external-to-internal-bridge
   namespace: traefik-system
 spec:
-  endpoints:
-  - address: kube-dns.kube-system.svc.cluster.local
   hosts:
   - dev-01.skiyl9x.pp.ua
   location: MESH_INTERNAL
