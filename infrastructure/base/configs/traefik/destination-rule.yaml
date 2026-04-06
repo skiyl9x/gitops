@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: external-to-internal-mtls
+  namespace: traefik-system
+spec:
+  host: "dev-01.skiyl9x.pp.ua"
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL # This forces the sidecar to use the mesh certificates

@@ -8,3 +8,4 @@ resources:
   - certificates-prod.yaml
   - tls-store.yaml
   - service-entry.yaml
+  - destination-rule.yaml
