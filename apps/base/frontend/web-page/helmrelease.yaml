@@ -23,7 +23,7 @@ spec:
       repository: ghcr.io/skiyl9x/web-page
       tag: "main-e26a092"
     nameOverride: web-page
-    replicaCount: 3
+    replicaCount: 1
     resources:
       limits:
         memory: 128Mi
