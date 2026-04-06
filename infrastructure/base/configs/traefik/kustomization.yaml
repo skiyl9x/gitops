@@ -7,5 +7,5 @@ resources:
   - certificates-stage.yaml
   - certificates-prod.yaml
   - tls-store.yaml
- # - service-entry.yaml
+  - service-entry.yaml
  # - destination-rule.yaml
