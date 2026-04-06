@@ -2,16 +2,15 @@ apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
 metadata:
   name: external-to-internal-bridge
-  namespace: traefik-system # Deploy where Traefik is
+  namespace: traefik-system
 spec:
   hosts:
-    - "dev-01.skiyl9x.pp.ua" 
+    - "dev-01.skiyl9x.pp.ua"
   location: MESH_INTERNAL
   ports:
     - number: 80
       name: http
       protocol: HTTP
-    - number: 443
-      name: https
-      protocol: HTTPS
-  resolution: NONE
+  resolution: DNS
+  endpoints:
+    - address: web-page.apps-frontend-dev-01.svc.cluster.local
