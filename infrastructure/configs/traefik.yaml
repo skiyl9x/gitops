@@ -132,7 +132,7 @@ spec:
     providers:
       kubernetesGateway:
         enabled: true
-        nativeLBByDefault: false
+        nativeLBByDefault: true
 ---
 apiVersion: traefik.io/v1alpha1
 kind: TLSStore
