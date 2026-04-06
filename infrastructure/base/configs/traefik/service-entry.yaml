@@ -12,8 +12,8 @@ spec:
       name: http
       protocol: HTTP
   resolution: DNS
-  endpoints:
-
-    - address: kube-dns.kube-system.svc.cluster.local
+#  endpoints:
+#
+#    - address: kube-dns.kube-system.svc.cluster.local
 
 
