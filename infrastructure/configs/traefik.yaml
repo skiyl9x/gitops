@@ -152,7 +152,7 @@ metadata:
   namespace: traefik-system
 spec:
   endpoints:
-  - address: web-page.apps-frontend-dev-01.svc.cluster.local
+  - address: kube-dns.kube-system.svc.cluster.local
   hosts:
   - dev-01.skiyl9x.pp.ua
   location: MESH_INTERNAL
