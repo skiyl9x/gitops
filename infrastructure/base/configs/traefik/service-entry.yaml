@@ -13,4 +13,7 @@ spec:
       protocol: HTTP
   resolution: DNS
   endpoints:
-    - address: web-page.apps-frontend-dev-01.svc.cluster.local
+
+    - address: kube-dns.kube-system.svc.cluster.local
+
+
