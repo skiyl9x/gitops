@@ -135,6 +135,17 @@ spec:
         nativeLBByDefault: true
 ---
 apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: external-to-internal-mtls
+  namespace: traefik-system
+spec:
+  host: dev-01.skiyl9x.pp.ua
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+---
+apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
 metadata:
   name: external-to-internal-bridge
