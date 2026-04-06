@@ -79,5 +79,5 @@ spec:
       kubernetesGateway:
         enabled: true
         
-        nativeLBByDefault: true
+        nativeLBByDefault: false
       
