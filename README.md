@@ -1,5 +1,4 @@
-# gitops
-GitOps
+# GitOps
 
 Add Flux Operator
 ```
@@ -10,5 +9,6 @@ helm install flux-operator oci://ghcr.io/controlplaneio-fluxcd/charts/flux-opera
 
 ```
 git clone git@github.com:skiyl9x/gitops.git
+kubectl apply gitops/clusters/production/flux-instance.yaml
 
 ```
