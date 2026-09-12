@@ -7,3 +7,8 @@ helm install flux-operator oci://ghcr.io/controlplaneio-fluxcd/charts/flux-opera
   --namespace flux-system \
   --create-namespace
 ```
+
+```
+git clone git@github.com:skiyl9x/gitops.git
+
+```

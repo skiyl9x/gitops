@@ -23,5 +23,5 @@ spec:
     kind: GitRepository
     url: "ssh://git@github.com/skiyl9x/gitops"
     ref: "refs/heads/main"
-    path: "clusters/homelab-k3s"
+    path: "clusters/production"
     pullSecret: "flux-system"
