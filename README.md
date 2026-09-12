@@ -11,5 +11,4 @@ Install Flux into Production Cluster
 ```
 git clone git@github.com:skiyl9x/gitops.git
 kubectl apply gitops/clusters/production/flux-instance.yaml
-
 ```
